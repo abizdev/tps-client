@@ -1,0 +1,11 @@
+@reference '@app/styles/globals.css'
+
+.inputWrapper {
+  @apply rounded-lg border-2 border-transparent focus-within:border-blue-400;
+  @apply flex-center;
+}
+
+.input {
+  @apply ;
+  @apply ;
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "my_orders": "Мои заказы",
+    "cart": "Корзина",
+    "liked":  "Избранные",
+    "catalog": "Каталог",
+    "address": "Ташкент, ул-ца Ойбек, 28/14",
+    "login": "Войти"
+  },
+  "footer": {
+    "telegram_latest_news": "Будьте в курсе всех последних новостей через Telegram",
+    "connect_with_telegram": "Связаться через Telegram",
+    "rights": "Toshkent Parfum© 2021. Все права защищены.",
+    "policy_privacy": "Политика конфеденциальности",
+    "user": "Пользователь",
+    "login": "Вход",
+    "sign_up": "Регистрация",
+    "socials_title": "Наши соц. сети",
+    "sections": "Разделы",
+    "for_clients": "Покупателям",
+    "about": "О магазине",
+    "recommendations": "Рекомендации",
+    "brands": "Бренды",
+    "confidentiality": "Конфеденциальность",
+    "feedback": "Обратная свзь",
+    "perfumery": "Парфюмерия",
+    "body_and_bath": "Тело и ванна",
+    "hair":  "Волосы",
+    "face": "Лицо",
+    "all_sections":  "Все разделы"
+  },
+  "placeholders": {
+    "search_product_input": "Поиск..."
+  },
+  "title": "Hello world!",
+  "about": "Go to the about page"
+}

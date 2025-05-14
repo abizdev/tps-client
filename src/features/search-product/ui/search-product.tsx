@@ -1,0 +1,40 @@
+'use client'
+
+import React from 'react';
+import { Input } from '@shared/ui';
+import { useTranslations } from 'next-intl';
+
+export const SearchProduct: React.FC = () => {
+  const t = useTranslations('placeholders')
+  const [searchValue, setSearchValue] = React.useState<string>('');
+
+  const handleChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  }, [])
+
+  const onClearInput = React.useCallback(() => {
+    setSearchValue('')
+  }, [])
+
+  return (
+    <div className='relative flex-grow'>
+      <Input
+        id='search-product'
+        type='search'
+        value={searchValue}
+        defaultValue={searchValue}
+        placeholder={t('search_product_input')}
+        onChange={handleChange}
+        inputWrapperClass='gap-2'
+        startContent={<i className='icon-search text-gray' />}
+        endContent={(
+          <button
+            type='button'
+            onClick={onClearInput}
+            className='icon-close-circle cursor-pointer text-xl leading-5 text-gray-200 hover-primary transition-300'
+          />
+        )}
+      />
+    </div>
+  )
+};

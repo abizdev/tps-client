@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --font-rubik: 'Rubik';
+  --font-proxima: 'Proxima';
+  --font-inter: 'Inter';
+  --font-sf: 'Sf';
+}
+
+@theme {
+  --font-proxima: var(--font-proxima);
+  --font-inter: var(--font-inter);
+  --font-rubik: var(--font-rubik);
+  --font-sfpro: var(--font-sf);
+
+  --color-secondary: #FEEBF0;
+
+  --color-white-12: #FFFFFF1F;
+  --color-white-24: #FFFFFF3D;
+
+  --color-black: #383838;
+  --color-black-30: #3838384D;
+  --color-black-400: #000000;
+
+  --color-blue: #2684FC;
+  --color-blue50: #2684FC14;
+
+  --color-yellow: #F8AF02;
+  --color-yellow-50: #F8AF021A;
+
+  --color-green: #26D176;
+  --color-green-50: #26D1761A;
+
+  --color-success: oklch(79.2% 0.209 151.711);
+  --color-error: oklch(57.7% 0.245 27.325);
+  --color-warning: oklch(85.2% 0.199 91.936);
+  --color-disabled: oklch(70.7% 0.022 261.325);
+
+  --color-primary: #F62559;
+  --color-primary-10: #F625591A;
+  --color-primary-50: #FFF6F9;
+  --color-primary-100: #FEEBF0;
+  --color-primary-200: #FFD4DF;
+  --color-primary-500: #FA0738;
+
+  --color-gray: #6F6F6F;  /* Gray 1 */
+  --color-gray-25: #78788029;
+  --color-gray-50: #383838B2;
+  --color-gray-200: #9E9EA5; /* Gray 2 */
+  --color-gray-300: #CDCDD0; /* Gray 3 */
+  --color-gray-350: #D9D9D9;
+  --color-gray-400: #EAEBED; /* Gray 4 */
+  --color-gray-500: #F2F3F5; /* Gray 5 */
+  --color-gray-600: #F7F8FA; /* Gray 6 */
+
+  --shadow-dark: 0px 1px 12px 0px rgba(5, 5, 5, 0.30);
+  --shadow-card: 0px 8px 40px 0px rgba(40, 40, 40, 0.12);
+  --shadow-green: 0px 0px 32px rgba(38, 209, 118, 0.30);
+  --shadow-red: 0px 2px 12px 0px rgba(246, 37, 89, 0.30), 0px 2px 12px 0px rgba(246, 37, 89, 0.54);
+  --shadow-badge: 0px 2px 12px 0px rgba(246, 37, 89, 0.30);
+  --shadow-red-card: 0px 8px 24px rgba(246, 37, 89, 0.10);
+  --shadow-red-btn: 0px 3px 20px 0px rgba(255, 13, 73, 0.20);
+  --shadow-red-story: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  --shadow-toast: 0px 4px 10px 0px rgba(0, 0, 0, 0.13);
+  --shadow-black: 0px 4px 44px 0px rgba(56, 56, 56, 0.16);
+  --shadow-dropdown: 0px 4px 13px 0px rgba(56, 56, 56, 0.08);
+  --shadow-black-sm: 0px 3px 1px rgba(0, 0, 0, 0.06), 0px 3px 8px rgba(0, 0, 0, 0.15);
+
+  --background-image-blue-gradient: linear-gradient(180deg, #37BBFE 0%, #007DBB 100%);
+  --background-image-black-gradient: linear-gradient(85deg, #383838 0%, #6F6F6F 131.39%);
+  --background-image-red-gradient: linear-gradient(193deg, #EB2859 -6.24%, #792036 92.34%);
+  --background-image-side-gradient: linear-gradient(90deg, #F7F8FA -28.78%, rgba(247, 248, 250, 0.00) 100%);
+  --background-image-white-gradient:
+    linear-gradient(180deg, rgba(247, 248, 250, 0.00) 0%, rgba(247, 248, 250, 0.72) 100%);
+  --background-image-story-whitebefore:
+    linear-gradient(-90deg, rgba(247, 248, 250, 0.00) 0%, rgba(247, 248, 250, 0.72) 100%);
+  --background-image-story-whiteafter:
+    linear-gradient(90deg, rgba(247, 248, 250, 0.00) 0%, rgba(247, 248, 250, 0.72) 100%);
+  --background-image-slider-gradient:
+    linear-gradient(180deg, rgba(2, 5, 20, 0.00) 0%, rgba(2, 5, 20, 0.70) 51.34%, #020514 100%);
+  --background-image-telegram-gradient: linear-gradient(180deg, #37BBFE 0%, #007DBB 100%);
+  --background-image-brand-gradient: linear-gradient(180deg, rgba(26, 26, 26, 0), rgba(26, 26, 26, .8) 73.96%, #1a1a1a);
+  --background-image-story-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, #090808 100%);
+
+  --leading-100: 100%;
+  --leading-120: 120%;
+  --leading-130: 130%;
+
+  --radius-10: 10px;
+
+  --text-10: 10px;
+  --text-18: 18px;
+  --text-22: 22px;
+  --text-28: 28px;
+  --text-32: 32px;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    font-family: var(--font-proxima);
+    font-weight: 600;
+  }
+
+  [class^="icon-"] {
+    @apply text-2xl leading-6;
+  }
+
+  body {
+    background: #F7F8FA;
+  }
+
+  input[type='search']::-webkit-search-cancel-button { display: none; }
+}
+
+@utility container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1185px;
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-y-center {
+  @apply flex items-center;
+}
+
+@utility flex-x-center {
+  @apply flex justify-center;
+}
+
+@utility flex-center-between {
+  @apply flex items-center justify-between;
+}
+
+@utility transition-300 {
+  @apply transition duration-300;
+}
+
+@utility hover-primary {
+  @apply hover:text-primary transition-300;
+}
+
+@utility group-primary {
+  @apply group-hover:text-primary transition-300;
+}
