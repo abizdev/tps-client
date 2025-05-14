@@ -119,6 +119,10 @@
   max-width: 1185px;
 }
 
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 @utility flex-center {
   @apply flex items-center justify-center;
 }

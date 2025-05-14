@@ -2,10 +2,14 @@ import TelegramIcon from './telegram.svg';
 import TelegramGlass from './telegram-glass.svg';
 import AppleStore from './app-stores/appstore.png';
 import GooglePlayStore from './app-stores/googleplay.png';
+import SearchEmpty from './empty/search.svg'
+import NoImage from './no-image.jpg'
 
 export {
   TelegramIcon,
   TelegramGlass,
   AppleStore,
   GooglePlayStore,
+  SearchEmpty,
+  NoImage
 }
