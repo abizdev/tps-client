@@ -1,12 +1,24 @@
 'use client'
 
 import React from 'react';
-import { Input } from '@shared/ui';
 import { useTranslations } from 'next-intl';
+import { Input } from '@shared/ui';
+import SearchedProductsList from './searched-products-list';
 
 export const SearchProduct: React.FC = () => {
   const t = useTranslations('placeholders')
   const [searchValue, setSearchValue] = React.useState<string>('');
+  const [showSearchedList, setShowSearchedList] = React.useState(false);
+
+  // const products = []
+  const products = [
+    { name: 'Product 1', value: 1, link: '#!', },
+    { name: 'Product 2', value: 2, link: '#!', },
+    { name: 'Product 3', value: 3, link: '#!', },
+    { name: 'Product 4', value: 4, link: '#!', },
+  ]
+
+  const toggleSearchedListShow = () => setShowSearchedList(!showSearchedList);
 
   const handleChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -25,6 +37,8 @@ export const SearchProduct: React.FC = () => {
         defaultValue={searchValue}
         placeholder={t('search_product_input')}
         onChange={handleChange}
+        onFocus={toggleSearchedListShow}
+        onBlur={toggleSearchedListShow}
         inputWrapperClass='gap-2'
         startContent={<i className='icon-search text-gray' />}
         endContent={(
@@ -35,6 +49,8 @@ export const SearchProduct: React.FC = () => {
           />
         )}
       />
+
+      {showSearchedList && <SearchedProductsList productsList={products} searchText={searchValue} />}
     </div>
   )
 };
