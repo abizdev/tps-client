@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { cn } from '@shared/lib/utils';
+import { NoImage } from '@shared/assets/images';
 
 interface Props {
 	title: string;
 	link?: string;
-	imgUrl: string;
+	imgUrl?: string;
 }
 
 const CategoryCard: React.FC<Props> = ({ title, link = '#!', imgUrl }) => {
@@ -16,13 +17,25 @@ const CategoryCard: React.FC<Props> = ({ title, link = '#!', imgUrl }) => {
 	return (
 		<article className='relative p-5 bg-white rounded-2xl overflow-hidden group hover:shadow-card transition-300'>
 			<Link href={link} className='flex flex-col gap-10'>
-				<Image
-					src='/category.png'
-					className='absolute bottom-0 right-0'
-					alt='category'
-					width='80'
-					height='80'
-				/>
+				{imgUrl
+					? (
+						<Image
+							src="/category.png"
+							className="absolute bottom-0 right-0"
+							alt="category"
+							width="80"
+							height="80"
+						/>
+					) : (
+						<Image
+							src={NoImage}
+							className="absolute bottom-0 right-0"
+							alt="category"
+							width="80"
+							height="80"
+						/>
+					)
+				}
 
 				<h5 className='text-xl leading-130 text-black font-proxima-nova'>
 					{title}

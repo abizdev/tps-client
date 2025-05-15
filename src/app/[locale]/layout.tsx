@@ -5,10 +5,11 @@ import { notFound } from "next/navigation";
 import localFont from 'next/font/local';
 import { cn } from '@shared/lib/utils';
 import { routing } from '@shared/config/i18n';
+import { Header } from '@widgets/header';
+import { Footer } from '@widgets/footer';
 
 import '@shared/assets/css/globals.css';
 import '@shared/assets/fonts/icons/style.css';
-import { Footer, Header } from '@widgets';
 
 const rubik = Rubik({
   subsets: ['latin'],

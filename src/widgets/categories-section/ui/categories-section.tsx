@@ -1,7 +1,7 @@
 import React from 'react';
-import SectionTitle from '../../section-title/ui/section-title';
 import { cn } from '@shared/lib/utils';
 import { CategoryCardLazy, ICategory } from '@/entitites/category';
+import { SectionTitleLazy } from '../../section-title';
 
 interface Props {
   wrapperClass?: string;
@@ -23,7 +23,7 @@ const CategoriesSection: React.FC<Props> = (props) => {
   return (
     <section className={cn('py-14', wrapperClass)}>
       <div className="container">
-        <SectionTitle title={title} text={text} link={link} />
+        <SectionTitleLazy title={title} text={text} link={link} />
 
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4'>
           {categoriesList.map((category, key) => (
@@ -31,7 +31,7 @@ const CategoriesSection: React.FC<Props> = (props) => {
               key={key}
               title={category.title}
               link={category.link}
-              imgUrl={category.imgUrl}
+              imgUrl={category?.imgUrl}
             />
           ))}
         </div>
