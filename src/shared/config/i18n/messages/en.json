@@ -33,6 +33,9 @@
   "placeholders": {
     "search_product_input": "Поиск..."
   },
+  "goto": "Перейти",
+  "popular_category": "Популярные разделы",
+  "all": "Все",
   "title": "Hello world!",
   "about": "Go to the about page"
 }
