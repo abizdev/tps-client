@@ -16,9 +16,9 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconClass?: string;
 }
 
-export const Button = React.memo((props: Props) => {
+export const Button = React.memo<Props>((props) => {
   const {
-    text = 'Button',
+    text,
     icon,
     iconPosition = 'right',
     size = IButtonSize.medium,
@@ -40,14 +40,14 @@ export const Button = React.memo((props: Props) => {
   }
 
   const additionalStyles = [
-    className,
     sizes[size],
+    className,
   ];
 
   return (
     <button
       className={cn(
-        'flex-y-center gap-1.5',
+        'flex-center gap-1.5',
         'text-base font-bold leading-100',
         'rounded-xl cursor-pointer active:scale-95',
         'transition-all duration-300',

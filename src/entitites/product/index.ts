@@ -1,5 +1,10 @@
 import React from 'react';
 
-const SearchedProductLazy = React.lazy(() => import('./searched-product/searched-product'))
+const SearchedProductLazy =
+  React.lazy(() => import('./ui/searched-product/searched-product'));
 
-export { SearchedProductLazy }
+const ProductCardLazy = React.lazy(() => import('./ui/card/card'))
+
+export { SearchedProductLazy, ProductCardLazy }
+
+export {}
