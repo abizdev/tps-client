@@ -1,4 +1,11 @@
 {
+  "saved": {
+    "saved_products": "Избранные"
+  },
+  "empty_content": {
+    "empty_product": "Пусто \uD83D\uDE15",
+    "empty_product_liked_list": "Вы еще не сохранили никаких продуктов"
+  },
   "header": {
     "my_orders": "Мои заказы",
     "cart": "Корзина",

@@ -7,4 +7,4 @@ const ProductCardLazy = React.lazy(() => import('./ui/card/card'))
 
 export { SearchedProductLazy, ProductCardLazy }
 
-export {}
+export type { ISearchProduct, IProduct } from './model/types'

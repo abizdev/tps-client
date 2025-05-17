@@ -64,10 +64,7 @@ const ProductCard: React.FC<Props> = ({ product, className }) => {
           </h4>
 
           <div className="flex-y-center mt-1 gap-1">
-            {Array(5).map((_item: number, key) => (
-              <i key={key} className="icon-star text-yellow text-xs leading-3 w-3 h-3" />
-            ))}
-
+            <i className="icon-star text-yellow text-xs leading-3" />
             <span className="ml-1 text-sm text-gray-200">
 							{product?.rating}
 						</span>

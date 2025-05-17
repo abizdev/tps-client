@@ -1,13 +1,3 @@
-export interface IProductSlider {
-  id: number;
-  imgUrl: string;
-}
-
-export interface ISearchProduct extends IProductSlider {
-  name: string;
-  linkUrl: string;
-}
-
 export interface IProduct {
   id: number;
   title: string;
@@ -20,3 +10,5 @@ export interface IProduct {
   isLiked: boolean;
   image?: string;
 }
+
+export type ISearchProduct = Pick<IProduct, 'linkUrl' | 'image' | 'name'>

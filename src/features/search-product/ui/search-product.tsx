@@ -12,10 +12,10 @@ export const SearchProduct: React.FC = () => {
 
   // const products = []
   const products = [
-    { name: 'Product 1', value: 1, link: '#!', },
-    { name: 'Product 2', value: 2, link: '#!', },
-    { name: 'Product 3', value: 3, link: '#!', },
-    { name: 'Product 4', value: 4, link: '#!', },
+    { name: 'Product 1', linkUrl: '#!' },
+    { name: 'Product 2', linkUrl: '#!', },
+    { name: 'Product 3', linkUrl: '#!', },
+    { name: 'Product 4', linkUrl: '#!', },
   ]
 
   const toggleSearchedListShow = () => setShowSearchedList(!showSearchedList);
