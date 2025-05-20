@@ -1,7 +1,6 @@
 import React from 'react';
-
-import Link from 'next/link';
 import { cn } from '@shared/lib/utils';
+import { Link } from '@shared/config/i18n';
 
 interface Props {
 	title?: string;

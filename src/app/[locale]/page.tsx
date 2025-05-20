@@ -1,6 +1,9 @@
 import { useTranslations } from 'next-intl';
 import { CategoriesSectionLazy } from '@widgets/categories-section';
 import { ProductsSectionLazy } from '@widgets/products-section';
+import { brandsListMock, PopularBrandSwiperLazy } from '@entities/brand';
+import { SectionTitleLazy } from '@widgets/section-title';
+import React from 'react';
 
 export default function Home() {
   const t = useTranslations('')
@@ -51,6 +54,17 @@ export default function Home() {
         link={t('all')}
         productsList={products}
       />
+      <section className="bg-white py-16 md:pt-8 md:pb-14">
+        <div className='container'>
+          <SectionTitleLazy title={t('popular_brands_title')} link='/brands' />
+        </div>
+
+        <div className="flex flex-col gap-y-4">
+          <PopularBrandSwiperLazy brands={brandsListMock} />
+          <PopularBrandSwiperLazy brands={brandsListMock} reverseDirection />
+          <PopularBrandSwiperLazy brands={brandsListMock} />
+        </div>
+      </section>
       <ProductsSectionLazy
         title={t('discount_products')}
         link={t('all')}

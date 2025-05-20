@@ -56,7 +56,7 @@ export const Button = React.memo<Props>((props) => {
       )}
       {...otherProps}
     >
-      {!loading && text && text}
+      {text}
       {!loading && icon && <i className={cn(icon, iconClass)} /> }
       {loading && <LazyLoading className='w-4 h-4' />}
     </button>

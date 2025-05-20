@@ -38,8 +38,15 @@
     "all_sections":  "Все разделы"
   },
   "placeholders": {
-    "search_product_input": "Поиск..."
+    "search_product_input": "Поиск"
   },
+  "brands": {
+    "title": "Все бренды"
+  },
+  "buttons": {
+    "download_more": "Загрузить еще"
+  },
+  "popular_brands_title": "Популярные бренды",
   "add_to_cart": "В корзину",
   "recommended_products": "Рекомендуемые товары",
   "discount_products": "Свежие скидки",

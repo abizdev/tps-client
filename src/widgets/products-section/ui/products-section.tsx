@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { cn } from '@shared/lib/utils';
 import { SectionTitleLazy } from '../../section-title';
-import { ProductCardLazy } from '@/entitites/product';
-import { IProduct } from '@/entitites/product';
+import { ProductCardLazy } from '@entities/product';
+import { IProduct } from '@entities/product';
 import { Empty } from '@shared/assets/images';
 import { EmptyContentLazy } from '../../empty-content';
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Highlighter from "react-highlight-words";
 import Image from 'next/image';
 import { NoImage } from '@shared/assets/images';
-import { ISearchProduct } from '@/entitites/product';
+import { ISearchProduct } from '@entities/product';
 
 interface Props {
   product: ISearchProduct;
@@ -46,4 +46,4 @@ const SearchedProduct: React.FC<Props> = ({ product, text }) => {
   );
 };
 
-export default React.memo(SearchedProduct);
+export default SearchedProduct;

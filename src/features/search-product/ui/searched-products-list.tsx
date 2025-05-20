@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { cn } from '@shared/lib/utils';
 import { useTranslations } from 'next-intl';
 import { SearchEmpty } from '@shared/assets/images';
-import { ISearchProduct, SearchedProductLazy } from '@/entitites/product';
+import { ISearchProduct, SearchedProductLazy } from '@entities/product';
 
 interface Props {
   productsList: ISearchProduct[] | [];

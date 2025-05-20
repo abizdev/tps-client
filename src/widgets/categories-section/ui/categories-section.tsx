@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@shared/lib/utils';
-import { CategoryCardLazy, ICategory } from '@/entitites/category';
+import { CategoryCardLazy, ICategory } from '@entities/category';
 import { SectionTitleLazy } from '../../section-title';
 
 interface Props {
