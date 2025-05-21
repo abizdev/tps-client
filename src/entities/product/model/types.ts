@@ -8,6 +8,7 @@ export interface IProduct {
   rating?: number;
   count: number;
   isLiked: boolean;
+  totalCount: number;
   image?: string;
 }
 

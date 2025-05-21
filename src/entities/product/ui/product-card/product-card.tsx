@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@shared/lib/utils';
@@ -6,20 +8,29 @@ import { Button, DiscountBadgeLazy } from '@shared/ui';
 import { IProduct } from '@entities/product/model/types';
 import { Link } from '@shared/config/i18n';
 import { useTranslations } from 'next-intl';
+import { useCounter } from '@shared/lib/hooks';
+
 
 interface Props {
   product: IProduct;
   className?: string;
 }
 
+const ProductCounterLazy = React.lazy(() => import('../product-counter/product-counter'))
+
 const ProductCard: React.FC<Props> = ({ product, className }) => {
   const t = useTranslations()
+  const counter = useCounter(product.count)
+
+  React.useEffect(() => {
+    console.log(counter.value);
+  }, [counter.value])
 
   return (
     <article
       className={cn(
         'relative cursor-pointer border  rounded-lg overflow-hidden group',
-        'border-gray-500 bg-gray-500 hover:border-gray-300 hover:shadow-card transition-300',
+        'border-gray-500 bg-gray-500 hover:border-gray-300 hover:shadow-product-card transition-300',
         className
       )}
     >
@@ -71,15 +82,26 @@ const ProductCard: React.FC<Props> = ({ product, className }) => {
           </div>
         </div>
 
-        <Button
-          text={t('add_to_cart')}
-          color='primary'
-          icon='icon-cart'
-          iconPosition='left'
-          className='mt-2 w-full'
-          variant='contained'
-          disabled={!product.count}
-        />
+        {counter.value ? (
+          <ProductCounterLazy
+            count={counter.value}
+            totalCount={product.totalCount}
+            increase={counter.incCount}
+            decrease={counter.decCount}
+            wrapperClass='mt-2 w-full'
+          />
+        ) : (
+          <Button
+            text={t('add_to_cart')}
+            color='primary'
+            icon='icon-cart'
+            iconPosition='left'
+            className='mt-2 w-full'
+            variant='contained'
+            disabled={!product.count}
+            onClick={counter.incCount}
+          />
+        )}
       </div>
     </article>
   );
