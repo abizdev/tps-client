@@ -22,9 +22,9 @@ const ProductCard: React.FC<Props> = ({ product, className }) => {
   const t = useTranslations()
   const counter = useCounter(product.count)
 
-  React.useEffect(() => {
-    console.log(counter.value);
-  }, [counter.value])
+  // React.useEffect(() => {
+  //   console.log(counter.value);
+  // }, [counter.value])
 
   return (
     <article

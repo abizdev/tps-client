@@ -46,6 +46,11 @@
   "buttons": {
     "download_more": "Загрузить еще"
   },
+  "routes": {
+    "main": "Главная",
+    "about": "О нас",
+    "saved": "Избранные"
+  },
   "popular_brands_title": "Популярные бренды",
   "add_to_cart": "В корзину",
   "recommended_products": "Рекомендуемые товары",

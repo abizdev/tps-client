@@ -4,7 +4,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Input } from '@shared/ui';
 import { useSearchInput } from '@shared/lib/hooks';
-import { debounce } from '@shared/lib/utils';
+// import { debounce } from '@shared/lib/utils';
 
 const SearchedProductsListLazy =
   React.lazy(() => import('./searched-products-list'))
@@ -14,7 +14,7 @@ export const SearchProduct: React.FC = () => {
   const searchInput = useSearchInput({})
   const [showSearchedList, setShowSearchedList] = React.useState(false);
 
-  console.log('client', debounce('product', () => searchInput.value, 500));
+  // console.log('client', debounce('product', () => searchInput.value, 500));
 
 
   // const products = []

@@ -2,10 +2,14 @@ import React from 'react';
 import { ProductsSectionLazy } from '@widgets/products-section';
 
 import { useTranslations } from 'next-intl';
+import { BreadCrumbsLazy } from '@shared/ui';
 
 const Page: React.FC = () => {
   const tEmpty = useTranslations('empty_content');
   const tSaved = useTranslations('saved');
+
+
+
 
   const products: [] = []
   // const products = [
@@ -38,11 +42,13 @@ const Page: React.FC = () => {
 
   return (
     <main>
+      <BreadCrumbsLazy paths={[{ name: 'saved', link: '#!' }]} />
       <ProductsSectionLazy
         title={tSaved('saved_products')}
         emptyTitle={tEmpty('empty_product')}
         emptyText={tEmpty('empty_product_liked_list')}
         productsList={products}
+        wrapperClass='pt-5'
       />
     </main>
   );
