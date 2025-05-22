@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { cn } from '@shared/lib/utils';
 import { NoImage } from '@shared/assets/images';
-import { Button, DiscountBadgeLazy } from '@shared/ui';
+import { Button, DiscountBadgeLazy, StarRatingLazy } from '@shared/ui';
 import { IProduct } from '@entities/product/model/types';
 import { Link } from '@shared/config/i18n';
 import { useTranslations } from 'next-intl';
@@ -75,7 +75,7 @@ const ProductCard: React.FC<Props> = ({ product, className }) => {
           </h4>
 
           <div className="flex-y-center mt-1 gap-1">
-            <i className="icon-star text-yellow text-xs leading-3" />
+            <StarRatingLazy size='small' selectedStars={product.rating} />
             <span className="ml-1 text-sm text-gray-200">
 							{product?.rating}
 						</span>
