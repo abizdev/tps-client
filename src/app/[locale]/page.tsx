@@ -4,43 +4,13 @@ import { ProductsSectionLazy } from '@widgets/products-section';
 import { brandsListMock, PopularBrandSwiperLazy } from '@entities/brand';
 import { SectionTitleLazy } from '@widgets/section-title';
 import React from 'react';
+import { IProduct, product } from '@entities/product';
 
 export default function Home() {
   const t = useTranslations('')
 
-  const categories = [
-    {
-      title: 'Categpry',
-      link: '#!'
-    }
-  ]
-  const products = [
-    {
-      id: Math.random(),
-      title: "Product name",
-      name: "Miraculum духи Byc Moze... Paris Parfume",
-      price: 184000,
-      discount: 184000,
-      linkUrl: "#!",
-      rating: 5,
-      count: 20,
-      isLiked: false,
-      images: [
-        {
-          id: Math.random(),
-          imgUrl: "@/assets/images/product.jpg",
-        },
-        {
-          id: Math.random(),
-          imgUrl: "@/assets/images/product.jpg",
-        },
-        {
-          id: Math.random(),
-          imgUrl: "@/assets/images/product.jpg",
-        },
-      ],
-    },
-  ]
+  const categories = [{ title: 'Categpry', link: '#!' }]
+  const products: IProduct[] = [product]
 
   return (
     <main>

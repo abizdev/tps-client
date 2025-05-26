@@ -44,12 +44,27 @@
     "title": "Все бренды"
   },
   "buttons": {
-    "download_more": "Загрузить еще"
+    "download_more": "Загрузить еще",
+    "add_to_cart": "Добавить в корзину",
+    "share": "Поделиться"
   },
   "routes": {
     "main": "Главная",
     "about": "О нас",
-    "saved": "Избранные"
+    "saved": "Избранные",
+    "products": "Продукты"
+  },
+  "product_info": {
+    "weight": "Объем",
+    "about_title":  "О продукте",
+    "about_subtitle": "Описание:",
+    "year": "Год выпуска:",
+    "manufacturer": "Бренд:",
+    "targeted_audience": "Целевая аудитория:",
+    "manufactured_country": "Страна изготовитель:"
+  },
+  "common": {
+    "related_products": "Схожие продукты"
   },
   "popular_brands_title": "Популярные бренды",
   "add_to_cart": "В корзину",

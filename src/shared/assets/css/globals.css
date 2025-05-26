@@ -150,3 +150,18 @@
 @utility group-primary {
   @apply group-hover:text-primary transition-300;
 }
+
+
+@layer components  {
+  .product-section-wrapper {
+    @apply bg-white rounded-xl p-4 md:p-6;
+  }
+
+  .product-section-wrapper .title {
+    @apply text-xl md:text-32 text-black leading-130 font-bold;
+  }
+
+  .product-section-wrapper .text {
+    @apply text-sm md:text-base leading-130 text-black;
+  }
+}

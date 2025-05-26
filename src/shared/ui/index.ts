@@ -9,6 +9,9 @@ const DiscountBadgeLazy =
 
 export { Logo } from './logo/logo'
 export { Button } from './button/button';
+export { sizes as buttonSizes } from './button/style';
+export type { IButtonSize, IButtonColor, IButtonVariant, } from './button/types';
+
 export { Input } from './form/input/input'
 export { InputSearch } from './form/input-search/input-search'
 

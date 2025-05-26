@@ -9,7 +9,7 @@ import { IProduct } from '@entities/product/model/types';
 import { Link } from '@shared/config/i18n';
 import { useTranslations } from 'next-intl';
 import { useCounter } from '@shared/lib/hooks';
-
+import { SaveProductLazy } from '@features/save-product';
 
 interface Props {
   product: IProduct;
@@ -45,14 +45,14 @@ const ProductCard: React.FC<Props> = ({ product, className }) => {
           <DiscountBadgeLazy className="group-hover:shadow-green" />
         )}
 
-        <Button
-          variant='contained'
-          className="absolute top-3 right-3 z-[1] bg-gray-500 p-2 group/button rounded-md opacity-0 group-hover:opacity-100"
-          icon='icon-like'
-          iconClass={cn(
-            'text-black text-xl leading-5 group-hover/button:text-primary transition-300',
-            (product.isLiked) && '!text-primary',
+        <SaveProductLazy
+          productId={product.id}
+          isLiked={product.isLiked}
+          btnClass={cn(
+            'absolute top-3 right-3 z-[1] bg-gray-500 p-2 group/button rounded-md',
+            'opacity-0 group-hover:opacity-100'
           )}
+          iconClass='text-black text-xl leading-5 group-hover/button:text-primary transition-300'
         />
       </div>
 

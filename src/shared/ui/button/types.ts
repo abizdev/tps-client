@@ -8,6 +8,7 @@ export type IButtonSize = keyof typeof IButtonSize;
 export const IButtonColor = {
   primary: 'primary',
   transparent: 'transparent',
+  gray: 'gray',
   secondary: 'secondary',
   success: 'success',
   warning: 'warning',

@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from '@shared/lib/utils';
 
 interface Props {
-	className: string;
+	className?: string;
 }
 
 const DiscountBadge: React.FC<Props> = ({ className }) => {
