@@ -12,7 +12,7 @@ interface Props {
 }
 
 const CategoryCard: React.FC<Props> = ({ title, link = '#!', imgUrl }) => {
-	const t = useTranslations()
+	const t = useTranslations();
 
 	return (
 		<article className='relative p-5 bg-white rounded-2xl overflow-hidden group hover:shadow-card transition-300'>

@@ -1,6 +1,6 @@
 import React from 'react';
 
 const ProductsSectionLazy =
-  React.lazy(() => import('./ui/products-section'))
+  React.lazy(() => import('./ui/products-section'));
 
-export { ProductsSectionLazy }
+export { ProductsSectionLazy };

@@ -1,6 +1,7 @@
 import React from 'react';
-import { cn } from '@shared/lib/utils';
 import { Link } from '@shared/config/i18n';
+import { cn } from '@shared/lib/utils';
+
 
 interface Props {
 	title?: string;

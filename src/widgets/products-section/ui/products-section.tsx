@@ -18,39 +18,39 @@ interface Props {
 }
 
 const ProductsSection: React.FC<Props> = (props) => {
-  const {
-    title,
-    text,
-    link,
-    wrapperClass,
-    productsList,
-    emptyTitle,
-    emptyText,
-  } = props;
+	const {
+		title,
+		text,
+		link,
+		wrapperClass,
+		productsList,
+		emptyTitle,
+		emptyText,
+	} = props;
 
 
-  return (
-    <section className={cn('py-14', wrapperClass)}>
-      <div className="container">
-        <SectionTitleLazy title={title} text={text} link={link} />
+	return (
+		<section className={cn('py-14', wrapperClass)}>
+			<div className="container">
+				<SectionTitleLazy title={title} text={text} link={link} />
 
-        {productsList.length ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4">
-            {productsList.map(product => (
-              <ProductCardLazy
-                key={product.id}
-                product={product}
-              />
-            ))}
-          </div>
-        ) : (
-          <EmptyContentLazy title={emptyTitle} text={emptyText}>
-            <Image src={Empty} className='w-72' alt='empty' />
-          </EmptyContentLazy>
-        )}
-      </div>
-    </section>
-  );
+				{productsList.length ? (
+					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4">
+						{productsList.map(product => (
+							<ProductCardLazy
+								key={product.id}
+								product={product}
+							/>
+						))}
+					</div>
+				) : (
+					<EmptyContentLazy title={emptyTitle} text={emptyText}>
+						<Image src={Empty} className='w-72' alt='empty' />
+					</EmptyContentLazy>
+				)}
+			</div>
+		</section>
+	);
 };
 
 export default ProductsSection;

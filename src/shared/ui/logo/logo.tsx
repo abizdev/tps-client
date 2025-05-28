@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cn } from '../../lib/utils'
+import { cn } from '../../lib/utils';
 
 interface Props {
 	color?: string;
@@ -21,7 +21,7 @@ export const Logo  = React.memo<Props>(({ color = 'black', hoverEnable = false, 
 			xmlns='http://www.w3.org/2000/svg'
 			className={cn(
 				'transition-300',
-        className,
+				className,
 				variants[color],
 				hoverEnable && 'hover:!fill-primary',
 			)}

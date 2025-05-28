@@ -5,22 +5,22 @@ import { ProductsSectionLazy } from '@widgets/products-section';
 import { useTranslations } from 'next-intl';
 
 const breadcrumbs = [
-  { name: 'products', link: '/products' },
-]
+	{ name: 'products', link: '/products' },
+];
 
 const SingleProduct: React.FC = () => {
-  const tCommon = useTranslations('common');
-  const productsList = [product];
+	const tCommon = useTranslations('common');
+	const productsList = [product];
 
-  return (
-    <main className='container'>
-      <BreadCrumbsLazy paths={breadcrumbs} />
-      <ProductMainLazy product={product} />
-      <ProductAboutLazy product={product} />
-      <ProductCommentsLazy product={product} />
-      <ProductsSectionLazy productsList={productsList} title={tCommon('related_products')} />
-    </main>
-  );
+	return (
+		<main className='container'>
+			<BreadCrumbsLazy paths={breadcrumbs} />
+			<ProductMainLazy product={product} />
+			<ProductAboutLazy product={product} />
+			<ProductCommentsLazy product={product} />
+			<ProductsSectionLazy productsList={productsList} title={tCommon('related_products')} />
+		</main>
+	);
 };
 
-  export default SingleProduct;
+export default SingleProduct;

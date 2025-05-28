@@ -11,24 +11,23 @@ interface Props {
 }
 
 const SaveProduct: React.FC<Props> = (props) => {
-  const {
-    size = 'medium',
-    isLiked,
-    productId,
-    btnClass,
-    iconClass
-  } = props;
+	const {
+		size = 'medium',
+		isLiked,
+		btnClass,
+		iconClass
+	} = props;
 
-  return (
-    <Button
-      size={size}
-      icon='icon-like'
-      color='gray'
-      variant='contained'
-      className={btnClass}
-      iconClass={cn(iconClass, (isLiked) && '!text-primary')}
-    />
-  );
+	return (
+		<Button
+			size={size}
+			icon='icon-like'
+			color='gray'
+			variant='contained'
+			className={btnClass}
+			iconClass={cn(iconClass, (isLiked) && '!text-primary')}
+		/>
+	);
 };
 
 export default React.memo(SaveProduct);

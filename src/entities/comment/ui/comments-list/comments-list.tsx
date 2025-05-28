@@ -10,17 +10,17 @@ interface Props {
 }
 
 const CommentsList: React.FC<Props> = ({ commentsList, wrapperClass }) => {
-  return (
-    <div className={cn('flex flex-col', wrapperClass)}>
-      {commentsList.map((comment, index) => (
-        <CommentLazy
-          key={comment.id}
-          comment={comment}
-          wrapperClass={cn({ 'border-b border-gray-500': index !== commentsList.length - 1 })}
-        />
-      ))}
-    </div>
-  );
+	return (
+		<div className={cn('flex flex-col', wrapperClass)}>
+			{commentsList.map((comment, index) => (
+				<CommentLazy
+					key={comment.id}
+					comment={comment}
+					wrapperClass={cn({ 'border-b border-gray-500': index !== commentsList.length - 1 })}
+				/>
+			))}
+		</div>
+	);
 };
 
 export default CommentsList;

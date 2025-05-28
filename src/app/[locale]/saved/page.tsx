@@ -5,53 +5,53 @@ import { useTranslations } from 'next-intl';
 import { BreadCrumbsLazy } from '@shared/ui';
 
 const Page: React.FC = () => {
-  const tEmpty = useTranslations('empty_content');
-  const tSaved = useTranslations('saved');
+	const tEmpty = useTranslations('empty_content');
+	const tSaved = useTranslations('saved');
 
 
 
 
-  const products: [] = []
-  // const products = [
-  //   {
-  //     id: Math.random(),
-  //     title: "Product name",
-  //     name: "Miraculum духи Byc Moze... Paris Parfume",
-  //     price: 184000,
-  //     discount: 184000,
-  //     linkUrl: "#!",
-  //     rating: 5,
-  //     count: 20,
-  //     isLiked: true,
-  //     images: [
-  //       {
-  //         id: Math.random(),
-  //         imgUrl: "@/assets/images/product.jpg",
-  //       },
-  //       {
-  //         id: Math.random(),
-  //         imgUrl: "@/assets/images/product.jpg",
-  //       },
-  //       {
-  //         id: Math.random(),
-  //         imgUrl: "@/assets/images/product.jpg",
-  //       },
-  //     ],
-  //   },
-  // ]
+	const products: [] = [];
+	// const products = [
+	//   {
+	//     id: Math.random(),
+	//     title: "Product name",
+	//     name: "Miraculum духи Byc Moze... Paris Parfume",
+	//     price: 184000,
+	//     discount: 184000,
+	//     linkUrl: "#!",
+	//     rating: 5,
+	//     count: 20,
+	//     isLiked: true,
+	//     images: [
+	//       {
+	//         id: Math.random(),
+	//         imgUrl: "@/assets/images/product.jpg",
+	//       },
+	//       {
+	//         id: Math.random(),
+	//         imgUrl: "@/assets/images/product.jpg",
+	//       },
+	//       {
+	//         id: Math.random(),
+	//         imgUrl: "@/assets/images/product.jpg",
+	//       },
+	//     ],
+	//   },
+	// ]
 
-  return (
-    <main>
-      <BreadCrumbsLazy paths={[{ name: 'saved', link: '#!' }]} />
-      <ProductsSectionLazy
-        title={tSaved('saved_products')}
-        emptyTitle={tEmpty('empty_product')}
-        emptyText={tEmpty('empty_product_liked_list')}
-        productsList={products}
-        wrapperClass='pt-5'
-      />
-    </main>
-  );
+	return (
+		<main>
+			<BreadCrumbsLazy paths={[{ name: 'saved', link: '#!' }]} />
+			<ProductsSectionLazy
+				title={tSaved('saved_products')}
+				emptyTitle={tEmpty('empty_product')}
+				emptyText={tEmpty('empty_product_liked_list')}
+				productsList={products}
+				wrapperClass='pt-5'
+			/>
+		</main>
+	);
 };
 
 export default Page;

@@ -17,48 +17,48 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = React.memo<Props>((props) => {
-  const {
-    text,
-    icon,
-    iconPosition = 'right',
-    size = IButtonSize.medium,
-    color = IButtonColor.primary,
-    variant = IButtonVariant.contained,
-    loading = false,
-    disabled = false,
-    className,
-    iconClass,
-    ...otherProps
-  } = props;
+	const {
+		text,
+		icon,
+		iconPosition = 'right',
+		size = IButtonSize.medium,
+		color = IButtonColor.primary,
+		variant = IButtonVariant.contained,
+		loading = false,
+		disabled = false,
+		className,
+		iconClass,
+		...otherProps
+	} = props;
 
-  const mods = {
-    [contained[color]]: variant === IButtonVariant.contained,
-    [outlined[color]]: variant === IButtonVariant.outline,
-    'border-none outline-none bg-none rounded-none': variant === IButtonVariant.clear,
-    'flex-row-reverse': iconPosition === 'left',
-    'opacity-30 pointer-events-none': disabled || loading
-  }
+	const mods = {
+		[contained[color]]: variant === IButtonVariant.contained,
+		[outlined[color]]: variant === IButtonVariant.outline,
+		'border-none outline-none bg-none rounded-none': variant === IButtonVariant.clear,
+		'flex-row-reverse': iconPosition === 'left',
+		'opacity-30 pointer-events-none': disabled || loading
+	};
 
-  const additionalStyles = [
-    sizes[size],
-    className,
-  ];
+	const additionalStyles = [
+		sizes[size],
+		className,
+	];
 
-  return (
-    <button
-      className={cn(
-        'flex-center gap-1.5',
-        'text-base font-bold leading-100',
-        'rounded-xl cursor-pointer active:scale-95',
-        'transition-all duration-300',
-        mods,
-        additionalStyles
-      )}
-      {...otherProps}
-    >
-      {text}
-      {!loading && icon && <i className={cn(icon, iconClass)} /> }
-      {loading && <LazyLoading className='w-4 h-4' />}
-    </button>
-  );
+	return (
+		<button
+			className={cn(
+				'flex-center gap-1.5',
+				'text-base font-bold leading-100',
+				'rounded-xl cursor-pointer active:scale-95',
+				'transition-all duration-300',
+				mods,
+				additionalStyles
+			)}
+			{...otherProps}
+		>
+			{text}
+			{!loading && icon && <i className={cn(icon, iconClass)} /> }
+			{loading && <LazyLoading className='w-4 h-4' />}
+		</button>
+	);
 });
