@@ -46,7 +46,8 @@
   "buttons": {
     "download_more": "Загрузить еще",
     "add_to_cart": "Добавить в корзину",
-    "share": "Поделиться"
+    "share": "Поделиться",
+    "add_comment": "Добавить  отзыв"
   },
   "routes": {
     "main": "Главная",
@@ -58,6 +59,8 @@
     "weight": "Объем",
     "about_title":  "О продукте",
     "about_subtitle": "Описание:",
+    "feedbacks": "Отзывы",
+    "feedback_btn_info": "Отзыв можно оставить только после приобретения данного продукта",
     "year": "Год выпуска:",
     "manufacturer": "Бренд:",
     "targeted_audience": "Целевая аудитория:",

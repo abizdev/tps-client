@@ -1,6 +1,6 @@
 import React from 'react';
 import { BreadCrumbsLazy } from '@shared/ui';
-import { product, ProductAboutLazy, ProductMainLazy } from '@entities/product';
+import { product, ProductAboutLazy, ProductCommentsLazy, ProductMainLazy } from '@entities/product';
 import { ProductsSectionLazy } from '@widgets/products-section';
 import { useTranslations } from 'next-intl';
 
@@ -17,6 +17,7 @@ const SingleProduct: React.FC = () => {
       <BreadCrumbsLazy paths={breadcrumbs} />
       <ProductMainLazy product={product} />
       <ProductAboutLazy product={product} />
+      <ProductCommentsLazy product={product} />
       <ProductsSectionLazy productsList={productsList} title={tCommon('related_products')} />
     </main>
   );

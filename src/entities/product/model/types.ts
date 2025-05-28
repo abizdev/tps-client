@@ -4,6 +4,7 @@ export interface IProductCategory {
 }
 
 export interface IProductWeight { value: number, enabled: boolean }
+export interface IProductTotalRating { total: number; percent: number }
 
 export interface IProduct {
   id: number;
@@ -14,6 +15,8 @@ export interface IProduct {
   discount?: number;
   linkUrl: string;
   rating?: number;
+  totalRatings?: IProductTotalRating[];
+  totalComments?: number;
   count: number;
   isLiked: boolean;
   slug: string;
@@ -36,5 +39,7 @@ export type IProductInfoMain =
     'name' | 'image' | 'discount' | 'price' | 'tags' | 'isLiked' | 'count' | 'totalCount' | 'rating' | 'weights' |
     'category' | 'id'
   >
+
+export type IProductComments = Pick<IProduct, 'id' | 'totalComments' | 'rating' | 'totalRatings'>;
 
 export type ISearchProduct = Pick<IProduct, 'linkUrl' | 'image' | 'name'>

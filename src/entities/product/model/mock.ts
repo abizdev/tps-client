@@ -1,4 +1,6 @@
-export const product = {
+import { IProduct } from './types';
+
+export const product: IProduct = {
   id: Math.random(),
   title: "Product name",
   slug: 'product-name',
@@ -11,6 +13,14 @@ export const product = {
   discount: 184000,
   linkUrl: "#!",
   rating: 5,
+  totalRatings: [
+    { total: 1, percent: 20 },
+    { total: 2, percent: 40 },
+    { total: 3, percent: 60 },
+    { total: 4, percent: 80 },
+    { total: 5, percent: 100 },
+  ],
+  totalComments: 123,
   count: 20,
   totalCount: 100,
   weights: [{ value: 50, enabled: true }, { value: 100, enabled: true }, { value: 150, enabled: false }],

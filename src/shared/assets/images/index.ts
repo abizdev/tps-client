@@ -5,6 +5,7 @@ import GooglePlayStore from './app-stores/googleplay.png';
 import SearchEmpty from './empty/search.svg'
 import NoImage from './no-image.jpg'
 import Empty from './empty/empty.svg'
+import EmptyComments from './empty/overview.svg'
 
 export {
   TelegramIcon,
@@ -14,4 +15,5 @@ export {
   SearchEmpty,
   NoImage,
   Empty,
+  EmptyComments
 }
