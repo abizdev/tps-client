@@ -4,7 +4,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css';
-import BrandCard from '../brand-card';
+import BrandCard from '../brand-card/brand-card';
 import { IBrand } from '../../model/types';
 
 interface Props {

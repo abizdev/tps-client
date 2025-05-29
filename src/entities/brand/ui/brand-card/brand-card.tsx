@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from '@shared/ui';
-import { IBrand } from '../model/types';
+import { IBrand } from '../../model/types';
 import { cn } from '@shared/lib/utils';
 import { Link } from '@shared/config/i18n';
 
