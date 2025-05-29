@@ -1,7 +1,6 @@
 import React from 'react';
 import { cn } from '@shared/lib/utils';
 
-
 export type TPosition = 'top' | 'left' | 'bottom' | 'right'
 
 interface Props {
@@ -33,7 +32,7 @@ const Tooltip = React.memo<Props>((props) => {
 			{children}
 			<div
 				className={cn(
-					'absolute z-50 px-3 py-2 rounded-md text-sm text-white bg-gray-800',
+					'absolute z-50 px-3 py-2 rounded-md text-sm text-white bg-gray-800 size-auto',
 					'transition-all duration-200 ease-in-out opacity-0 group-hover:opacity-100 pointer-events-none',
 					mods[position],
 					tooltipClass

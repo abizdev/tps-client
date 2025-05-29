@@ -33,8 +33,11 @@ const Avatar = React.memo<Props>((props) => {
 		<div className={cn(
 			'overflow-hidden w-10 h-10 flex items-center justify-center flex-center bg-gray-400', mods, wrapperClass
 		)}>
-			{src && <img src={src} alt="avatar" className='w-full h-full object-contain flex' />}
-			{name && <span className='text-base uppercase icon-user text-gray-200' />}
+			{src
+				? <img src={src} alt="avatar" className='w-full h-full object-contain flex' />
+				: <span className='text-base uppercase icon-user text-gray-200' />
+			}
+			{/*{name && <span className='text-base uppercase icon-user text-gray-200' />}*/}
 		</div>
 	);
 });

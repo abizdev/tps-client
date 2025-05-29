@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LazyLoading = React.lazy(() => import('./loading/loading'));
-const LazyBadge = React.lazy(() => import('./budge/budge'));
+const LazyBadge = React.lazy(() => import('./badge/badge'));
 const StarRatingLazy = React.lazy(() => import('./star-rating/star-rating'));
 const BreadCrumbsLazy = React.lazy(() => import('./bread-crumbs/bread-crumbs'));
 const AvatarLazy = React.lazy(() => import('./avatar/avatar'));

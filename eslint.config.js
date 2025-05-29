@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from 'eslint-plugin-storybook';
+
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginJs from '@eslint/js';
 import pluginReact from 'eslint-plugin-react';
@@ -10,17 +13,9 @@ const compat = new FlatCompat({
 });
 
 
-export default [
-	// Next.js recommended configurations
-	...compat.extends('next/core-web-vitals'),
-
-	// Base configurations
-	...tseslint.configs.recommended,
-	pluginJs.configs.recommended,
-	pluginReact.configs.flat.recommended,
-	pluginReact.configs.flat['jsx-runtime'],
-
-	{
+export default [// Next.js recommended configurations
+	...compat.extends('next/core-web-vitals'), // Base configurations
+	...tseslint.configs.recommended, pluginJs.configs.recommended, pluginReact.configs.flat.recommended, pluginReact.configs.flat['jsx-runtime'], {
 		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
 		languageOptions: {
 			parserOptions: {
@@ -116,9 +111,7 @@ export default [
 			'prefer-const': 'error',
 			'no-var': 'error',
 		}
-	},
-
-	// Ignore patterns
+	}, // Ignore patterns
 	{
 		ignores: [
 			'.next/**',
@@ -131,5 +124,4 @@ export default [
 			'*.min.js',
 			'coverage/**'
 		]
-	}
-];
+	}, ...storybook.configs['flat/recommended']];
