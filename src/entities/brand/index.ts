@@ -6,4 +6,5 @@ const PopularBrandSwiperLazy =
 
 export { BrandCardLazy, PopularBrandSwiperLazy };
 export { brandsListMock } from './model/mock';
+export { usePopularBrands } from './model/api';
 export type { ITopBrands, IBrand } from './model/types';

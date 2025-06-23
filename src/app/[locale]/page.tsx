@@ -1,12 +1,14 @@
 import { useTranslations } from 'next-intl';
 import { CategoriesSectionLazy } from '@widgets/categories-section';
 import { ProductsSectionLazy } from '@widgets/products-section';
-import { brandsListMock, PopularBrandSwiperLazy } from '@entities/brand';
+import { brandsListMock, PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
 import { SectionTitleLazy } from '@widgets/section-title';
 import { IProduct, product } from '@entities/product';
 
 export default function Home() {
 	const t = useTranslations('');
+
+	const brands = usePopularBrands();
 
 	const categories = [{ title: 'Categpry', link: '#!' }];
 	const products: IProduct[] = [product];
@@ -29,9 +31,9 @@ export default function Home() {
 				</div>
 
 				<div className="flex flex-col gap-y-4">
-					<PopularBrandSwiperLazy brands={brandsListMock} />
-					<PopularBrandSwiperLazy brands={brandsListMock} reverseDirection />
-					<PopularBrandSwiperLazy brands={brandsListMock} />
+					<PopularBrandSwiperLazy brands={brands.data} />
+					<PopularBrandSwiperLazy brands={brands.data} reverseDirection />
+					<PopularBrandSwiperLazy brands={brands.data} />
 				</div>
 			</section>
 			<ProductsSectionLazy

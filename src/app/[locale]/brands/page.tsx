@@ -6,10 +6,15 @@ import { BrandCardLazy, brandsListMock } from '@entities/brand';
 import { Button } from '@shared/ui';
 import { SearchBrandsInputLazy } from '@features/search-brands-input';
 import { debounce } from '@shared/lib/utils';
+import { useBrands } from '@entities/brand/model/api';
+import { usePagination } from '@shared/lib/hooks';
 
 const BrandsPage: React.FC = () => {
 	const tBrands = useTranslations('brands');
 	const tButtons = useTranslations('buttons');
+	const pagination = usePagination();
+
+	const brands = useBrands(pagination.page, pagination.limit);
 
 	const onSearch = React.useCallback((value: string) => {
 		if (!value) return;
@@ -26,7 +31,7 @@ const BrandsPage: React.FC = () => {
 				</div>
 
 				<div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6'>
-					{brandsListMock.map(brand => (
+					{brands.data.map(brand => (
 						<BrandCardLazy key={brand.id} brand={brand} />
 					))}
 				</div>
