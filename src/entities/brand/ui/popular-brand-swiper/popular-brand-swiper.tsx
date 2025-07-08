@@ -47,7 +47,7 @@ const PopularBrandSwiper: React.FC<Props> = ({ brands, reverseDirection }) => {
 				}}
 				className="popular-swiper"
 			>
-				{brands.map((brand) => (
+				{brands?.map((brand) => (
 					<SwiperSlide
 						key={brand.id}
 						className="bg-gray-100 flex items-center justify-center rounded-2xl overflow-hidden group"

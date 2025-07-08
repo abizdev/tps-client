@@ -1,7 +1,10 @@
+'use client';
+
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { CategoriesSectionLazy } from '@widgets/categories-section';
 import { ProductsSectionLazy } from '@widgets/products-section';
-import { brandsListMock, PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
+import { PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
 import { SectionTitleLazy } from '@widgets/section-title';
 import { IProduct, product } from '@entities/product';
 
@@ -10,7 +13,7 @@ export default function Home() {
 
 	const brands = usePopularBrands();
 
-	const categories = [{ title: 'Categpry', link: '#!' }];
+	const categories = [{ title: 'Category', link: '#!' }];
 	const products: IProduct[] = [product];
 
 	return (
@@ -30,11 +33,13 @@ export default function Home() {
 					<SectionTitleLazy title={t('popular_brands_title')} link='/brands' />
 				</div>
 
-				<div className="flex flex-col gap-y-4">
-					<PopularBrandSwiperLazy brands={brands.data} />
-					<PopularBrandSwiperLazy brands={brands.data} reverseDirection />
-					<PopularBrandSwiperLazy brands={brands.data} />
-				</div>
+				{brands.data && (
+					<div className="flex flex-col gap-y-4">
+						<PopularBrandSwiperLazy brands={brands.data} />
+						<PopularBrandSwiperLazy brands={brands.data} reverseDirection />
+						<PopularBrandSwiperLazy brands={brands.data} />
+					</div>
+				)}
 			</section>
 			<ProductsSectionLazy
 				title={t('discount_products')}

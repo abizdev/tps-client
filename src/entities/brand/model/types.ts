@@ -13,7 +13,7 @@ export interface ITopBrands {
 }
 
 export interface IBrand {
-  id: number;
+  id: string;
   name: string;
   linkUrl: string;
   imgUrl?: string;
