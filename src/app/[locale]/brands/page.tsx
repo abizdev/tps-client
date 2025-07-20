@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { BrandCardLazy, brandsListMock } from '@entities/brand';
+import { BrandCardLazy } from '@entities/brand';
 import { Button } from '@shared/ui';
 import { SearchBrandsInputLazy } from '@features/search-brands-input';
 import { debounce } from '@shared/lib/utils';

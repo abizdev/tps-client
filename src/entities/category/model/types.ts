@@ -1,5 +1,5 @@
 export interface ICategory {
-  title: string;
-  link?: string;
+  id: string;
+  name: string;
   imgUrl?: string;
 }

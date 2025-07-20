@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { server_api } from '@shared/api/api';
 import { AxiosResponse } from 'axios';
 import { IBrand } from '@entities/brand';
@@ -25,7 +25,7 @@ export const usePopularBrands = () => {
 export const useBrands = (page: number, limit: number) => {
 	return useQuery({
 		queryKey: ['brands', page, limit],
-		queryFn: () => server_api.get('/brands', { params: { page, limit } }),
-		select: (data) => data.data,
+		queryFn: () => fetchBrands(page, limit),
+		// select: (data) => data.data,
 	});
 };

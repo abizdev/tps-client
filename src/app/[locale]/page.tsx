@@ -7,22 +7,25 @@ import { ProductsSectionLazy } from '@widgets/products-section';
 import { PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
 import { SectionTitleLazy } from '@widgets/section-title';
 import { IProduct, product } from '@entities/product';
+import { useAllCategories, useManCategories } from '@entities/category';
 
 export default function Home() {
 	const t = useTranslations('');
 
 	const brands = usePopularBrands();
+	const categories = useAllCategories();
+	const categoriesMan = useManCategories();
 
-	const categories = [{ title: 'Category', link: '#!' }];
+	// const categories = [{ title: 'Category', link: '#!' }];
 	const products: IProduct[] = [product];
 
 	return (
 		<main>
-			<CategoriesSectionLazy
+			{categories.data && <CategoriesSectionLazy
 				title={t('popular_category')}
 				link={t('all')}
-				categoriesList={categories}
-			/>
+				categoriesList={categories.data}
+			/>}
 			<ProductsSectionLazy
 				title={t('recommended_products')}
 				link={t('all')}
@@ -46,11 +49,11 @@ export default function Home() {
 				link={t('all')}
 				productsList={products}
 			/>
-			<CategoriesSectionLazy
+			{categoriesMan.data?.length && <CategoriesSectionLazy
 				title={t('best_category_for_man')}
 				link={t('all')}
-				categoriesList={categories}
-			/>
+				categoriesList={categoriesMan.data}
+			/>}
 			<ProductsSectionLazy
 				title={t('body_products')}
 				link={t('all')}

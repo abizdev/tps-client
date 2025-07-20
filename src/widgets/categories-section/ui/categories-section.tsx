@@ -26,11 +26,11 @@ const CategoriesSection: React.FC<Props> = (props) => {
 				<SectionTitleLazy title={title} text={text} link={link} />
 
 				<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4'>
-					{categoriesList.map((category, key) => (
+					{categoriesList.map((category) => (
 						<CategoryCardLazy
-							key={key}
-							title={category.title}
-							link={category.link}
+							key={category.id}
+							title={category.name}
+							link={`/products?category=${category.name}`}
 							imgUrl={category?.imgUrl}
 						/>
 					))}
