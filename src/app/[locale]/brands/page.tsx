@@ -31,7 +31,7 @@ const BrandsPage: React.FC = () => {
 				</div>
 
 				<div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6'>
-					{brands.data.map(brand => (
+					{brands.data && brands.data.map(brand => (
 						<BrandCardLazy key={brand.id} brand={brand} />
 					))}
 				</div>
