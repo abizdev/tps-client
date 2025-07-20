@@ -4,7 +4,14 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
 	eslint: {
 		dirs: ['app', 'pages', 'components', 'lib', 'utils'] // Specify directories to lint
-	}
+	},
+	redirects: async () => ([
+		{
+			source: '/',
+			destination: '/ru',
+			permanent: false,
+		},
+	])
 };
 
 const withNextIntl = createNextIntlPlugin({
