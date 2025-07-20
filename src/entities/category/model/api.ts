@@ -15,15 +15,3 @@ export const useAllCategories = () => {
 		refetchOnWindowFocus: true,
 	});
 };
-
-const fetchManCategories = async () => {
-	return [];
-};
-
-export const useManCategories = () => {
-	return useQuery({
-		queryKey: ['man-categories'],
-		queryFn: fetchManCategories,
-		refetchOnWindowFocus: true,
-	});
-};

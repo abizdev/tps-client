@@ -8,16 +8,19 @@ import { PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
 import { SectionTitleLazy } from '@widgets/section-title';
 import { IProduct, product } from '@entities/product';
 import { useAllCategories, useManCategories } from '@entities/category';
+import { useProductsByTargetAudience, useProductsQuery } from '@entities/product';
 
 export default function Home() {
 	const t = useTranslations('');
 
 	const brands = usePopularBrands();
 	const categories = useAllCategories();
-	const categoriesMan = useManCategories();
+	const products = useProductsQuery({ page: 3, limit: 4 });
+	const productsForWoman = useProductsByTargetAudience({ page: 1,  limit: 4, targetAudience: 'Woman' });
+	const productsForMan = useProductsByTargetAudience({ page: 2, limit: 4, targetAudience: 'Man' });
 
 	// const categories = [{ title: 'Category', link: '#!' }];
-	const products: IProduct[] = [product];
+	// const products: IProduct[] = [product];
 
 	return (
 		<main>
@@ -26,11 +29,11 @@ export default function Home() {
 				link={t('all')}
 				categoriesList={categories.data}
 			/>}
-			<ProductsSectionLazy
+			{products.data && <ProductsSectionLazy
 				title={t('recommended_products')}
 				link={t('all')}
-				productsList={products}
-			/>
+				productsList={products.data}
+			/>}
 			<section className="bg-white py-16 md:pt-8 md:pb-14">
 				<div className='container'>
 					<SectionTitleLazy title={t('popular_brands_title')} link='/brands' />
@@ -44,27 +47,17 @@ export default function Home() {
 					</div>
 				)}
 			</section>
-			<ProductsSectionLazy
-				title={t('discount_products')}
+			{productsForMan.data?.length && <ProductsSectionLazy
+				title={t('man_products')}
 				link={t('all')}
-				productsList={products}
-			/>
-			{categoriesMan.data?.length && <CategoriesSectionLazy
-				title={t('best_category_for_man')}
-				link={t('all')}
-				categoriesList={categoriesMan.data}
+				productsList={productsForMan.data}
 			/>}
-			<ProductsSectionLazy
-				title={t('body_products')}
-				link={t('all')}
-				productsList={products}
-				wrapperClass='bg-white'
-			/>
-			<ProductsSectionLazy
+			{productsForWoman.data && <ProductsSectionLazy
 				title={t('women_products')}
 				link={t('all')}
-				productsList={products}
-			/>
+				productsList={productsForWoman.data}
+				wrapperClass='bg-white'
+			/>}
 		</main>
 	);
 }
