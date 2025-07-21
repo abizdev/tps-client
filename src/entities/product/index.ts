@@ -14,5 +14,5 @@ export const ProductsSectionRecommendedLazy = dynamic(() => import('./ui/product
 export const ProductsSectionAudienceLazy = dynamic(() => import('./ui/products-sections/products-section-audience'));
 
 export { product } from './model/mock';
-export { useProductsByTargetAudience, useProductsQuery } from './model/api';
+export { useProductsByTargetAudience, useProductsQuery, useProductsById } from './model/api';
 export type { ISearchProduct, IProduct } from './model/types';

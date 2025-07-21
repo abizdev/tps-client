@@ -20,8 +20,8 @@ interface Props {
 
 const ProductMain: React.FC<Props> = ({ product }) => {
 	const tButtons = useTranslations('buttons');
-	const counter = useCounter(product.count);
-	const [activeWeight, setActiveWeight] = React.useState(product.weights[0]);
+	const counter = useCounter(product?.count);
+	const [activeWeight, setActiveWeight] = React.useState(product?.weights[0]);
 
 	return (
 		<section className={cn('product-section-wrapper flex gap-3 md:gap-5')}>

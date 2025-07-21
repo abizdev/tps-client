@@ -1,5 +1,5 @@
 import { server_api } from '@shared/api/api';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 import { IProduct } from '@entities/product';
 
@@ -33,5 +33,17 @@ export const useProductsByTargetAudience =  (params: Omit<IProductsParams, 'cate
 	return useQuery({
 		queryKey: ['main-targetAudience-products', params.targetAudience],
 		queryFn: () => fetchProductsByTargetAudience(params),
+	});
+};
+
+const fetchProductsById = async (id: string) => {
+	const response: AxiosResponse<IProduct> = await server_api.get('/products/' + id);
+	return response.data;
+};
+
+export const useProductsById = (id: string) => {
+	return useSuspenseQuery({
+		queryKey: ['product', id],
+		queryFn: () => fetchProductsById(id),
 	});
 };
