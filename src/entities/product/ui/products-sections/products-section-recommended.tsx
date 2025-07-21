@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { cn } from '@shared/lib/utils';
@@ -9,7 +11,7 @@ interface Props {
   wrapperClass?: string;
 }
 
-const ProductCardLazy = dynamic(() => import('../product-card/product-card'), { ssr: false });
+const ProductCardLazy = dynamic(() => import('../product-card/product-card'));
 const ProductsSectionLoaderLazy = dynamic(() => import('../products-section-loader/products-section-loader'));
 
 const ProductsSectionRecommended: React.FC<Props> = ({ wrapperClass }) => {

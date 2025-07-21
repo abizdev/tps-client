@@ -1,13 +1,11 @@
+'use client';
+
 import React from 'react';
 import { SectionTitleLazy } from '@widgets/section-title';
 import { PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
 import { useTranslations } from 'next-intl';
 
-interface Props {
-  className?: string;
-}
-
-const BrandsSection: React.FC<Props> = ({ className }) => {
+const BrandsSection: React.FC = () => {
 	const t = useTranslations('');
 	const brands = usePopularBrands();
 
