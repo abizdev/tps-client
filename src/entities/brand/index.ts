@@ -1,10 +1,9 @@
-import React from 'react';
+import dynamic from 'next/dynamic';
 
-const BrandCardLazy = React.lazy(() => import('./ui/brand-card/brand-card'));
-const PopularBrandSwiperLazy =
-  React.lazy(() => import('./ui/popular-brand-swiper/popular-brand-swiper'));
+export const BrandsSectionLazy = dynamic(() => import('./ui/brands-section/brands-section'));
+export const BrandCardLazy = dynamic(() => import('./ui/brand-card/brand-card'));
+export const PopularBrandSwiperLazy = dynamic(() => import('./ui/popular-brand-swiper/popular-brand-swiper'));
 
-export { BrandCardLazy, PopularBrandSwiperLazy };
 export { brandsListMock } from './model/mock';
 export { usePopularBrands } from './model/api';
 export type { ITopBrands, IBrand } from './model/types';
