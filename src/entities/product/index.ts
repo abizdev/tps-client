@@ -1,14 +1,17 @@
-import React from 'react';
+import dynamic from 'next/dynamic';
 
 export const SearchedProductLazy =
-  React.lazy(() => import('./ui/searched-product/searched-product'));
+  dynamic(() => import('./ui/searched-product/searched-product'));
 export const ProductCardLazy =
-  React.lazy(() => import('./ui/product-card/product-card'));
-export const ProductMainLazy = React.lazy(() => import('./ui/info/product-main/product-main'));
+  dynamic(() => import('./ui/product-card/product-card'));
+export const ProductMainLazy = dynamic(() => import('./ui/info/product-main/product-main'));
 export const ProductAboutLazy =
-  React.lazy(() => import('./ui/info/product-about/product-about'));
+  dynamic(() => import('./ui/info/product-about/product-about'));
 export const ProductCommentsLazy =
-  React.lazy(() => import('./ui/info/product-comments/product-comments'));
+  dynamic(() => import('./ui/info/product-comments/product-comments'));
+
+export const ProductsSectionRecommendedLazy = dynamic(() => import('./ui/products-sections/products-section-recommended'));
+export const ProductsSectionAudienceLazy = dynamic(() => import('./ui/products-sections/products-section-audience'));
 
 export { product } from './model/mock';
 export { useProductsByTargetAudience, useProductsQuery } from './model/api';

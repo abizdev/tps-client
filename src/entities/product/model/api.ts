@@ -1,5 +1,7 @@
 import { server_api } from '@shared/api/api';
 import { useQuery } from '@tanstack/react-query';
+import { AxiosResponse } from 'axios';
+import { IProduct } from '@entities/product';
 
 interface IProductsParams {
 	page?: number;
@@ -9,7 +11,7 @@ interface IProductsParams {
 }
 
 const fetchProducts = async (params: IProductsParams) => {
-	const response = await server_api.get('/products', { params });
+	const response: AxiosResponse<IProduct[]> = await server_api.get('/products', { params });
 	return response.data;
 };
 
@@ -21,7 +23,7 @@ export const useProductsQuery = (params: IProductsParams) => {
 };
 
 const fetchProductsByTargetAudience = async (params: Omit<IProductsParams, 'category'>) => {
-	const response = await server_api.get('/products', {
+	const response: AxiosResponse<IProduct[]> = await server_api.get('/products', {
 		params,
 	});
 	return response.data;
