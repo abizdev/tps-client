@@ -2,19 +2,17 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { CategoriesSectionLazy } from '@widgets/categories-section';
 import { ProductsSectionLazy } from '@widgets/products-section';
 import { PopularBrandSwiperLazy, usePopularBrands } from '@entities/brand';
 import { SectionTitleLazy } from '@widgets/section-title';
-import { IProduct, product } from '@entities/product';
-import { useAllCategories, useManCategories } from '@entities/category';
 import { useProductsByTargetAudience, useProductsQuery } from '@entities/product';
+import { CategoriesSectionMainLazy } from '@entities/category';
 
 export default function Home() {
 	const t = useTranslations('');
 
 	const brands = usePopularBrands();
-	const categories = useAllCategories();
+
 	const products = useProductsQuery({ page: 3, limit: 4 });
 	const productsForWoman = useProductsByTargetAudience({ page: 1,  limit: 4, targetAudience: 'Woman' });
 	const productsForMan = useProductsByTargetAudience({ page: 2, limit: 4, targetAudience: 'Man' });
@@ -24,11 +22,7 @@ export default function Home() {
 
 	return (
 		<main>
-			{categories.data && <CategoriesSectionLazy
-				title={t('popular_category')}
-				link={t('all')}
-				categoriesList={categories.data}
-			/>}
+			<CategoriesSectionMainLazy />
 			{products.data && <ProductsSectionLazy
 				title={t('recommended_products')}
 				link={t('all')}

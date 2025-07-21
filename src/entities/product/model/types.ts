@@ -1,3 +1,10 @@
+export interface IGetProductsQuery {
+  page?: number;
+  limit?: number;
+  category?: string;
+  targetAudience?: string;
+}
+
 export interface IProductCategory {
   id: number;
   name: string;

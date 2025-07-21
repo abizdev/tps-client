@@ -1,6 +1,8 @@
-import React from 'react';
+import dynamic from 'next/dynamic';
 
-export const CategoryCardLazy = React.lazy(() => import('./ui/category-card'));
+export const CategoryCardLazy = dynamic(() => import('./ui/category-card/category-card'));
+export const CategoryCardLoaderLazy = dynamic(() => import('./ui/category-card-loader/category-card-loader'));
+export const CategoriesSectionMainLazy = dynamic(() => import('./ui/categories-section-main/categories-section-main'));
 
-export { useAllCategories, useManCategories } from './model/api';
+export { useAllCategories } from './model/api';
 export type { ICategory } from './model/types';
