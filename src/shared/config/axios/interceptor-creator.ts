@@ -18,28 +18,28 @@ export const setupInterceptors = (
     async (error) => {
       const originalRequest = error.config;
 
-      if (
-        (error.response.status === 401 || error.response.status === 403) &&
+			if (
+				(error.response.status === 401 || error.response.status === 403) &&
         !originalRequest._isRetry
-      ) {
-        originalRequest._isRetry = true;
+			) {
+				originalRequest._isRetry = true;
 
-        try {
-          const response: AxiosResponse = await unprotectedApiInstance.post('/jwt/refresh');
+				try {
+					const response: AxiosResponse = await unprotectedApiInstance.post('/jwt/refresh');
 
-          if (!response) {
-            throw new Error('Could not refresh token');
-          }
+					if (!response) {
+						throw new Error('Could not refresh token');
+					}
 
-          localStorage.setItem(ACCESS_TOKEN, response.data.access_token);
-          return apiInstance(originalRequest);
-        } catch (_err) {
-          localStorage.removeItem(ACCESS_TOKEN);
-          window.location.href = '/';
-        }
-      }
+					localStorage.setItem(ACCESS_TOKEN, response.data.access_token);
+					return apiInstance(originalRequest);
+				} catch (_err) {
+					localStorage.removeItem(ACCESS_TOKEN);
+					window.location.href = '/';
+				}
+			}
 
-      return Promise.reject(error);
-    }
-  );
+			return Promise.reject(error);
+		}
+	);
 };
