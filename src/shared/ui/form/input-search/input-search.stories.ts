@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { InputSearch } from './input-search';
-import React from 'react';
 import { action } from 'storybook/actions';
-import { Input } from '@shared/ui';
 
 const meta = {
 	title: 'shared/input-search',
