@@ -13,16 +13,15 @@ const ProductCardLoader = React.memo(() => {
 				</div>
 
 				<div className="flex flex-col">
-					<SkeletonLazy className='w-32 h-4.5' />
-					<SkeletonLazy className='w-32 h-4.5' />
+					<SkeletonLazy className='w-32 h-4.5 mt-1' />
 
 					<div className="flex-y-center mt-1 gap-1">
 						<SkeletonLazy className='w-32 h-4.5' />
-						<SkeletonLazy className='w-32 h-4.5' />
+						<SkeletonLazy className='w-4 h-4.5' />
 					</div>
 				</div>
 
-				<SkeletonLazy className='w-full h-12' />
+				<SkeletonLazy className='w-full h-12 mt-2' />
 			</div>
 		</article>
 	);
