@@ -12,6 +12,7 @@ export const ProductCommentsLazy =
 
 export const ProductsSectionRecommendedLazy = dynamic(() => import('./ui/products-sections/products-section-recommended'));
 export const ProductsSectionAudienceLazy = dynamic(() => import('./ui/products-sections/products-section-audience'));
+export const ProductCardLoadingLazy = dynamic(() => import('./ui/product-card-loader/product-card-loader'));
 
 export { product } from './model/mock';
 export { useProductsByTargetAudience, useProductsQuery, useProductsById } from './model/api';

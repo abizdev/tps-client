@@ -1,3 +1,3 @@
-import React from 'react';
+import dynamic from 'next/dynamic';
 
-export const ProductsSectionLoaderLazy = React.lazy(() => import('./products-section-loader'));
+export const ProductsSectionLoaderLazy = dynamic(() => import('./products-section-loader'));

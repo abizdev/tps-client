@@ -6,6 +6,7 @@ import { cn } from '@shared/lib/utils';
 import { useTranslations } from 'next-intl';
 import { SectionTitleLazy } from '@widgets/section-title';
 import { useProductsByTargetAudience } from '../../model/api';
+import { ProductsSectionLoaderLazy } from '@widgets/products-section-loader';
 
 // TODO: remove page
 interface Props {
@@ -16,7 +17,7 @@ interface Props {
 }
 
 const ProductCardLazy = dynamic(() => import('../product-card/product-card'));
-const ProductsSectionLoaderLazy = dynamic(() => import('../products-section-loader/products-section-loader'));
+const ProductCardLoaderLazy = dynamic(() => import('../product-card-loader/product-card-loader'));
 
 const ProductsSectionAudience: React.FC<Props> = ({ wrapperClass, targetAudience, page }) => {
 	const t = useTranslations('');
@@ -24,7 +25,12 @@ const ProductsSectionAudience: React.FC<Props> = ({ wrapperClass, targetAudience
 
 	if (products.isLoading) {
 		return (
-			<ProductsSectionLoaderLazy />
+			<ProductsSectionLoaderLazy wrapperClass='container'>
+				<ProductCardLoaderLazy />
+				<ProductCardLoaderLazy />
+				<ProductCardLoaderLazy />
+				<ProductCardLoaderLazy />
+			</ProductsSectionLoaderLazy>
 		);
 	}
 
