@@ -1,8 +1,9 @@
 import React from 'react';
+import { SkeletonLazy } from '@shared/ui';
 
 const CategoryCardLoader: React.FC = () => {
 	return (
-		<div className='skeleton h-32.5 rounded-2xl overflow-hidden'/>
+		<SkeletonLazy className='h-32.5 rounded-2xl' />
 	);
 };
 

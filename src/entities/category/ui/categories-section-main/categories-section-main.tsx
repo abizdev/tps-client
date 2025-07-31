@@ -22,7 +22,7 @@ const CategoriesSectionMain: React.FC<Props> = ({ wrapperClass }) => {
 
 	if (categories.isLoading) {
 		return (
-			<ProductsSectionLoaderLazy>
+			<ProductsSectionLoaderLazy wrapperClass='container'>
 				<CategoryCardLoaderLazy />
 				<CategoryCardLoaderLazy />
 				<CategoryCardLoaderLazy />

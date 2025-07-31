@@ -7,6 +7,7 @@ export const BreadCrumbsLazy = React.lazy(() => import('./bread-crumbs/bread-cru
 export const AvatarLazy = React.lazy(() => import('./avatar/avatar'));
 export const TooltipLazy = React.lazy(() => import('./tooltip/tooltip'));
 export const ModalLazy = React.lazy(() => import('./modal/modal'));
+export const SkeletonLazy = React.lazy(() => import('./skeleton/skeleton'));
 export const DiscountBadgeLazy =
   React.lazy(() => import('./discount-badge/discount-badge'));
 
