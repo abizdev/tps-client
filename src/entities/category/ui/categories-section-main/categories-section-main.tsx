@@ -1,11 +1,12 @@
 'use client';
 
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { cn } from '@shared/lib/utils';
+import { useTranslations } from 'next-intl';
 import { useAllCategories } from '@entities/category';
 import { SectionTitleLazy } from '@widgets/section-title';
-import dynamic from 'next/dynamic';
-import { useTranslations } from 'next-intl';
+import { ProductsSectionLoaderLazy } from '@widgets/products-section-loader';
 
 interface Props {
   wrapperClass?: string;
@@ -21,20 +22,13 @@ const CategoriesSectionMain: React.FC<Props> = ({ wrapperClass }) => {
 
 	if (categories.isLoading) {
 		return (
-			<section className={cn('py-14', wrapperClass)}>
-				<div className="container">
-					<SectionTitleLazy title={t('popular_category')} text={t('all')} link='#!' />
-
-					<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4'>
-						{/* TODO: add skeleton component and add content inside loader */}
-						<CategoryCardLoaderLazy />
-						<CategoryCardLoaderLazy />
-						<CategoryCardLoaderLazy />
-						<CategoryCardLoaderLazy />
-						<CategoryCardLoaderLazy />
-					</div>
-				</div>
-			</section>
+			<ProductsSectionLoaderLazy>
+				<CategoryCardLoaderLazy />
+				<CategoryCardLoaderLazy />
+				<CategoryCardLoaderLazy />
+				<CategoryCardLoaderLazy />
+				<CategoryCardLoaderLazy />
+			</ProductsSectionLoaderLazy>
 		);
 	}
 
