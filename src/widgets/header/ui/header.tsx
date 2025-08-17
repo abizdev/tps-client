@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from '@shared/config/i18n';
+import { Link, usePathname, useRouter } from '@shared/config/i18n';
 import { Button, LazyBadge, Logo } from '@shared/ui';
 import { useTranslations } from 'next-intl';
 import HeaderTop from './header-top';
 import { SearchProduct } from '@features/search-product';
+import { useLocale } from 'use-intl';
 
 export const Header = React.memo(() => {
 	const t = useTranslations('header');
-
 
 	return (
 		<header className='sticky top-0 z-30 hidden lg:block bg-white shadow-toast'>

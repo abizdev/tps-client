@@ -1,1 +1,1 @@
-export { ACCESS_TOKEN } from './localstorage-keys';
+export { LANGUAGE, ACCESS_TOKEN } from './localstorage-keys';

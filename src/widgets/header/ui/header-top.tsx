@@ -1,10 +1,22 @@
+'use client';
+
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@shared/lib/utils';
 import { socialLinks } from '../../footer/model/data';
+import { LangSwitcherLazy } from '@features/lang-switcher';
+import { useLocale } from 'use-intl';
+import { usePathname, useRouter } from '@shared/config/i18n';
 
 const HeaderTop = React.memo(() => {
+	const locale = useLocale();
+	const router = useRouter();
+	const pathname = usePathname();
 	const t = useTranslations('header');
+
+	const onLangChange = React.useCallback((value: string) => {
+		router.replace(`/${value}/${pathname}`);
+	}, [pathname, router]);
 
 	return (
 		<div className="hidden lg:flex bg-gray-100 py-3">
@@ -44,12 +56,7 @@ const HeaderTop = React.memo(() => {
 					</div>
 
 					{/* lang toggle */}
-					<div className="relative flex items-center flex-row-reverse gap-1 group cursor-pointer">
-						<i className="icon-chevron-down group-primary" />
-						<span className="text-gray text-xs leading-[130%] group-primary">
-							Русский
-						</span>
-					</div>
+					<LangSwitcherLazy activeLang={locale} onLangChange={onLangChange} />
 				</div>
 			</div>
 		</div>
