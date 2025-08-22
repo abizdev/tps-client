@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionTitleLoaderLazy } from '../section-title-loader';
+import { SectionTitleLoaderLazy } from '../../section-title-loader';
 import { cn } from '@shared/lib/utils';
 
 interface Props {
