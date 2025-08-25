@@ -7,16 +7,19 @@ import { socialLinks } from '../../footer/model/data';
 import { LangSwitcherLazy } from '@features/lang-switcher';
 import { useLocale } from 'use-intl';
 import { usePathname, useRouter } from '@shared/config/i18n';
+import { useParams } from 'next/navigation';
 
 const HeaderTop = React.memo(() => {
 	const locale = useLocale();
 	const router = useRouter();
+	const params = useParams();
 	const pathname = usePathname();
 	const t = useTranslations('header');
 
 	const onLangChange = React.useCallback((value: string) => {
-		router.replace(`/${value}/${pathname}`);
-	}, [pathname, router]);
+		// @ts-expect-error because of params
+		router.replace({ pathname, params }, { locale: value });
+	}, [params, pathname, router]);
 
 	return (
 		<div className="hidden lg:flex bg-gray-100 py-3">

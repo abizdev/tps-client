@@ -6,6 +6,9 @@ const meta = {
 	title: 'features/lang-switcher',
 	component: LangSwitcher,
 	tags: ['autodocs'],
+	args: {
+		activeLang: 'en',
+	}
 } satisfies Meta<typeof LangSwitcher>;
 
 export default meta;
