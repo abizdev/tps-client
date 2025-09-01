@@ -5,13 +5,18 @@ import { useTranslations } from 'next-intl';
 import HeaderTop from './header-top';
 import { SearchProduct } from '@features/search-product';
 import { useLocale } from 'use-intl';
+import { TLocale } from '@features/lang-switcher';
 
-export const Header = React.memo(() => {
+interface Props {
+	locale: TLocale;
+}
+
+export const Header = React.memo<Props>(({ locale }) => {
 	const t = useTranslations('header');
 
 	return (
 		<header className='sticky top-0 z-30 hidden lg:block bg-white shadow-toast'>
-			<HeaderTop />
+			<HeaderTop locale={locale} />
 
 			<div className='container flex-center-between py-4'>
 				<Link href='/'>

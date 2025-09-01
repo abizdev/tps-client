@@ -1,13 +1,14 @@
 import React from 'react';
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
 import { cn } from '@shared/lib/utils';
+import { TLang } from '../model/types';
 
 interface Props {
 	activeLang: string;
 	onLangChange: (lang: string) => void;
 }
 
-const languages: TLangs = {
+const languages: TLang = {
 	uz: {
 		value: 'uz',
 		label: 'O\'zbek',

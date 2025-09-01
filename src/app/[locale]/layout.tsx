@@ -25,14 +25,12 @@ export default async function RootLayout({
 }>) {
 	const { locale } = await params;
 
-	console.log('locale in layout', locale);
-
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
 	}
 
 	return (
-		<html lang="en">
+		<html lang={locale}>
 			<body
 				className={cn(
 					'antialiased',
@@ -43,8 +41,8 @@ export default async function RootLayout({
 				)}
 			>
 				<QueryProvider>
-					<NextIntlClientProvider>
-						<Header />
+					<NextIntlClientProvider >
+						<Header locale={locale} />
 						{children}
 						<Footer />
 					</NextIntlClientProvider>

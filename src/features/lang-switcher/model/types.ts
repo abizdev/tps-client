@@ -1,2 +1,3 @@
 type TLangOption = { value: string; label: string; };
-type TLangs = { [key: string]: TLangOption; }
+export type TLang = { [key: string]: TLangOption; }
+export type TLocale = 'uz' | 'ru' | 'en'

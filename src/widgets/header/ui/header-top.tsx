@@ -4,21 +4,34 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@shared/lib/utils';
 import { socialLinks } from '../../footer/model/data';
-import { LangSwitcherLazy } from '@features/lang-switcher';
-import { useLocale } from 'use-intl';
+import { LangSwitcherLazy, TLocale } from '@features/lang-switcher';
 import { usePathname, useRouter } from '@shared/config/i18n';
 import { useParams } from 'next/navigation';
 
-const HeaderTop = React.memo(() => {
-	const locale = useLocale();
+interface Props {
+	locale: TLocale;
+}
+
+const HeaderTop = React.memo<Props>(({ locale }) => {
 	const router = useRouter();
 	const params = useParams();
 	const pathname = usePathname();
 	const t = useTranslations('header');
 
+	console.log(locale);
+
 	const onLangChange = React.useCallback((value: string) => {
-		// @ts-expect-error because of params
-		router.replace({ pathname, params }, { locale: value });
+		React.startTransition(() => {
+			router.replace(
+				// @ts-expect-error -- TypeScript will validate that only known `params`
+				// are used in combination with a given `pathname`. Since the two will
+				// always match for the current route, we can skip runtime checks.
+				{ pathname, params },
+				{
+					locale: value,
+				},
+			);
+		});
 	}, [params, pathname, router]);
 
 	return (
