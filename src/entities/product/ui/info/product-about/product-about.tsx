@@ -26,11 +26,6 @@ const ProductAbout: React.FC<Props> = ({ product }) => {
 					<span className='text-base text-black font-semibold'>{product.year}</span>
 				</article>
 
-				{/*<article className='p-4'>*/}
-				{/*  <h5 className='text-base text-gray'>{t('weight')}</h5>*/}
-				{/*  <span className='text-base text-black font-semibold'>{weight}</span>*/}
-				{/*</article>*/}
-
 				<article className='p-4'>
 					<h5 className='text-base text-gray'>{t('manufacturer')}</h5>
 					<span className='text-base text-black font-semibold'>{product.manufacturer}</span>

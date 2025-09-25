@@ -7,7 +7,9 @@ export const setupInterceptors = (
 ) => {
 	apiInstance.interceptors.request.use(
 		(config: InternalAxiosRequestConfig<AxiosRequestConfig>) => {
-			config.headers.Authorization = `Bearer ${localStorage.getItem(ACCESS_TOKEN) ?? ''}`;
+			// TODO: add gettign token from cookies
+			const token = '';
+			config.headers.Authorization = `Bearer ${token}`;
 			return config;
 		},
 		(error) => Promise.reject(error)
@@ -19,7 +21,7 @@ export const setupInterceptors = (
 			const originalRequest = error.config;
 
 			if (
-				(error.response.status === 401 || error.response.status === 403) &&
+				(error?.response?.status === 401 || error?.response?.status === 403) &&
         !originalRequest._isRetry
 			) {
 				originalRequest._isRetry = true;

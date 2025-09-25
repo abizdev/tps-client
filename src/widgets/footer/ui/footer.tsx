@@ -21,7 +21,7 @@ export const Footer = React.memo(() => {
 	const t = useTranslations('footer');
 
 	return (
-		<footer className='bg-white border-t-4 border-primary pt-8'>
+		<footer className='bg-white border-t-4 border-primary pt-8 mt-8'>
 			<div className='container'>
 				{/* contacts */}
 				<div className='flex-center-between flex-wrap gap-y-5.5 bg-gray-600 rounded-2xl py-4 px-5'>

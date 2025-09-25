@@ -7,7 +7,7 @@ import {
 	ProductAboutLazy,
 	ProductCommentsLazy,
 	ProductMainLazy,
-	ProductsSectionRecommendedLazy, useProductsById
+	useProductsById
 } from '@entities/product';
 
 const breadcrumbs = [
@@ -15,7 +15,7 @@ const breadcrumbs = [
 ];
 
 const SingleProduct: React.FC = () => {
-	const params = useParams<{id: string  }>();
+	const params = useParams<{ id: string }>();
 	const product = useProductsById(params.id);
 
 	return (
@@ -24,7 +24,6 @@ const SingleProduct: React.FC = () => {
 			<ProductMainLazy product={product.data} />
 			<ProductAboutLazy product={product.data} />
 			<ProductCommentsLazy product={product.data} />
-			<ProductsSectionRecommendedLazy />
 		</main>
 	);
 };
