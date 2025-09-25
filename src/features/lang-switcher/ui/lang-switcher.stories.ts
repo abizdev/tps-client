@@ -8,6 +8,7 @@ const meta = {
 	tags: ['autodocs'],
 	args: {
 		activeLang: 'en',
+		onLangChange: (value: string) => value,
 	}
 } satisfies Meta<typeof LangSwitcher>;
 

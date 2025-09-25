@@ -18,8 +18,7 @@ const HeaderTop = React.memo<Props>(({ locale }) => {
 	const pathname = usePathname();
 	const t = useTranslations('header');
 
-	console.log(locale);
-
+	// TODO: fix locale change /ru -> /uz/ru
 	const onLangChange = React.useCallback((value: string) => {
 		React.startTransition(() => {
 			router.replace(

@@ -56,6 +56,7 @@ const ProductCard: React.FC<Props> = ({ product, className }) => {
 				/>
 			</div>
 
+			{/* TODO: fix redirection it's sending request before redirect on backend it gives 304 */}
 			<div className="flex flex-col p-3 bg-gray-500">
 				<Link href={`/products/${product.id}`} className="flex flex-col gap-1">
 					<h5 className="text-sm text-primary font-normal leading-130">
